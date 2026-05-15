@@ -1,0 +1,64 @@
+# mkdocs.yml
+site_name: MyEAP 文档
+site_description: Enterprise Equipment Automation Program for Semiconductor Manufacturing
+site_author: CIM Engineering Team
+site_url: https://myeap.example.com
+
+repo_name: your-org/myeap
+repo_url: https://github.com/your-org/myeap
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            show_source: true
+            show_root_heading: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - User Guide:
+      - user/index.md
+      - user/quickstart.md
+      - user/configuration.md
+  - Developer Guide:
+      - developer/index.md
+      - developer/architecture.md
+  - API Reference:
+      - api/index.md
+  - Specifications:
+      - specs/index.md
