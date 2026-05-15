@@ -1,0 +1,38 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem *)",
+      "Read(//c/Users/70706/.claude/**)",
+      "Read(//c/Users/70706/.config/**)",
+      "Bash(ls -la /home/*/.claude/plugins/repos/)",
+      "Read(//mnt/c/**)",
+      "Bash(where claude *)",
+      "Bash(mv \"/c/Users/70706/.claude/plugins/installed_plugins.json\" \"/c/Users/70706/.claude/plugins/installed_plugins.json.bak\")",
+      "Bash(mv \"/c/Users/70706/.claude/plugins/config.json\" \"/c/Users/70706/.claude/plugins/config.json.bak\")",
+      "PowerShell(Get-Content *)",
+      "PowerShell(claude *)",
+      "Bash(npm view *)",
+      "PowerShell(Join-Path *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(Test-Path *)",
+      "Skill(claude-hud:setup)",
+      "PowerShell($env:CLAUDE_CODE_SESSION_ID = \"test\"; node \"C:\\\\Users\\\\70706\\\\.claude\\\\plugins\\\\cache\\\\claude-hud\\\\claude-hud\\\\0.0.11\\\\dist\\\\index.js\" 2>&1)",
+      "Bash(gh issue *)",
+      "WebFetch(domain:github.com)",
+      "PowerShell(gh issue view 1198 --repo farion1231/cc-switch --json title,body 2>&1)",
+      "WebSearch",
+      "PowerShell(try { $response = Invoke-RestMethod -Uri \"https://api.github.com/repos/farion1231/cc-switch/issues/1198\" -Method Get -ErrorAction Stop; Write-Output $response.title; Write-Output \"---\"; Write-Output $response.body } catch { Write-Output \"Error: $_\" })",
+      "Skill(superpowers:brainstorming)",
+      "Skill(superpowers:writing-plans)",
+      "Skill(superpowers:subagent-driven-development)",
+      "Bash(Get-ChildItem -Path \"D:\\\\code\\\\my\\\\myeap\" -Force)",
+      "Bash(Select-Object Name, Mode)",
+      "Bash(python3 -c \"import ast; ast.parse\\(open\\('src/myeap/core/logging.py'\\).read\\(\\)\\)\")",
+      "Bash(python *)",
+      "Bash(pip install *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat: initial project structure *)"
+    ]
+  }
+}
