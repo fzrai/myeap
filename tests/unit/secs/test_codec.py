@@ -59,7 +59,7 @@ class TestSecsCodec:
         encoded = codec.encode_item(original)
         decoded, consumed = codec.decode_item(encoded)
 
-        assert item.value == b"\x00\xFF\xAB\xCD" for item in [decoded]
+        assert decoded.value == b"\x00\xFF\xAB\xCD"
         assert consumed == len(encoded)
 
     # ASCII encoding tests

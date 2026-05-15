@@ -43,7 +43,7 @@ class Equipment(Base):
     status: Mapped[str] = mapped_column(String(20), default="UNKNOWN", index=True)
     sub_status: Mapped[Optional[str]] = mapped_column(String(50))
     capabilities: Mapped[Optional[dict]] = mapped_column(JSONB)
-    metadata: Mapped[Optional[dict]] = mapped_column(JSONB)
+    extra_metadata: Mapped[Optional[dict]] = mapped_column(JSONB)
     created_at: Mapped[datetime] = mapped_column(
         DateTime, default=lambda: datetime.now(timezone.utc)
     )
@@ -147,7 +147,7 @@ class WorkOrder(Base):
     created_at: Mapped[datetime] = mapped_column(DateTime, default=lambda: datetime.now(timezone.utc))
     started_at: Mapped[Optional[datetime]] = mapped_column(DateTime)
     completed_at: Mapped[Optional[datetime]] = mapped_column(DateTime)
-    metadata: Mapped[Optional[dict]] = mapped_column(JSONB)
+    extra_metadata: Mapped[Optional[dict]] = mapped_column(JSONB)
 
     recipe: Mapped[Optional["Recipe"]] = relationship(back_populates="work_orders")
     target_equipment: Mapped[Optional["Equipment"]] = relationship(
